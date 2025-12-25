@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myrcpod
+  labels: 
+    app: myapp
+    type: frontend
+spec:
+  containers:
+    - name: mycont
+      image: bharaths
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 80

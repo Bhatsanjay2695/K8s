@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rc-bharaths
+spec:
+  template:
+    metadata:
+      name: rc-bharaths-pod
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: mycont
+          image: bharaths
+          imagePullPolicy: Never
+
+  selector:
+    matchLabels:
+      app: web
+  replicas: 3  
