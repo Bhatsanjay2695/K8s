@@ -1,33 +1,14 @@
-pipeline 
+pipeline
 {
     agent any
     stages
     {
-        stage('build')
-        {
-            steps
+            stage('checkout')
             {
-                echo "building"
+                echo 'clonning the code'
+                checkout scm
             }
-        }
-        stage('test')
-        {
-            steps
-            {
-                echo 'steps'
-            }
-        }
-        stage('deploy')
-        {
-            steps
-            {
-                echo 'deployment'
-            }
-
-        }
-
-
+            
     }
-
 
 }
