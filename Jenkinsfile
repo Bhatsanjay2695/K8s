@@ -10,6 +10,11 @@ pipeline
                 checkout scm
             }
             }
+            stage('deploy and host the website')
+            {
+                        sh 'kubectl apply -f replicaset.yaml'
+                        sh 'kubect port-forward rc-bharaths 8090:80'
+            }
 
     }
 
