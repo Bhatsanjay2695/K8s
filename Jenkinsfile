@@ -13,8 +13,8 @@ pipeline
             stage('deploy and host the website')
             {
                 steps{
-                        sh 'kubectl apply -f replicaset.yaml'
-                        sh 'kubectl port-forward replicaset/rc-bharaths 8090:80'
+                        sh 'kubectl apply -f pod1.yaml'
+                      
             }
             }
 
