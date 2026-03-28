@@ -13,8 +13,7 @@ pipeline
             stage('deploy and host the website')
             {
                 steps{
-                        sh 'which kubectl'
-                        sh 'kubectl get pods'
+                        sh 'whoami'
                       
             }
             }
