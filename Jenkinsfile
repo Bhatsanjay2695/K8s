@@ -13,9 +13,9 @@ pipeline
             stage('deploy and host the website')
             {
                 steps{
-                        sh 'echo $PATH'
-                        sh 'kubectl apply -f pod1.yaml'
-                        sh 'kubectl get pods'
+                
+                        sh '/usr/local/bin/kubectl apply -f pod1.yaml'
+                        sh '/usr/local/bin/kubectl get pods'
                       
             }
             }
