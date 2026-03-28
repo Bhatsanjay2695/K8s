@@ -14,6 +14,8 @@ pipeline
             {
                 steps{
                         sh 'whoami'
+                        sh 'kubectl apply -f pod1.yaml'
+                        sh 'kubectl get pods'
                       
             }
             }
