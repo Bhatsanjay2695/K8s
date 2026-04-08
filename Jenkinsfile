@@ -16,8 +16,8 @@ pipeline
             steps
             {
             echo 'checking the prereqss'
-            sh ' docker version | grep -q "Server" && echo "docker installed" || open -a Docker'
-            sh ' kind get cluster | grep -q "kind v0." && echo "kind installed already" || kind create cluster kindk8'
+            sh ' /usr/local/bin/docker version | grep -q "Server" && echo "docker installed" || open -a Docker'
+            sh ' /opt/homebrew/bin/kind get cluster | grep -q "kind v0." && echo "kind installed already" || kind create cluster kindk8'
             }    
         }
         stage('deployment')
