@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rc-bh
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rcbh
+  template:
+    metadata:
+      labels:
+        app: rcbh
+    spec:
+      containers:
+        - name: brc
+          image: nginx:latest

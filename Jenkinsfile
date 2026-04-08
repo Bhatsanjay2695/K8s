@@ -3,22 +3,25 @@ pipeline
     agent any
     stages
     {
-            stage('checkout')
-            {
-                steps{
-                echo 'clonning the code'
-                checkout scm
-            }
-            }
-            stage('deploy and host the website')
-            {
-                steps{
+        stage('checkout')
+        {
+            echo 'came to SCM'
+            checkout scm
+        }
+        stage('test')
+        {
+            echo 'checking the prereqss'
+            sh ' docker version | grep -q "Server" && echo "docker installed" || open -a Docker'
+            sh ' kind get cluster | grep -q "kind v0." && echo "kind installed already" || kind create cluster kindk8'
                 
-                        sh '/usr/local/bin/kubectl apply -f pod1.yaml'
-                        sh '/usr/local/bin/kubectl get pods'
-                      
-            }
-            }
+        }
+        stage('deployment')
+        {
+            echo 'deployment of the k8'
+            sh '/usr/local/bin/kubectl apply -f pod1.yaml'
+            
+
+        }
 
     }
 
