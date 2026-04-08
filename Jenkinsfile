@@ -16,7 +16,7 @@ pipeline
             steps
             {
             echo 'checking the prereqss'
-            sh ' /usr/local/bin/docker version | grep -q "Server" && echo "docker installed" || open -a Docker'
+            sh ' /opt/homebrew/bin/docker version | grep -q "Server" && echo "docker installed" || open -a Docker'
             sh ' /opt/homebrew/bin/kind get clusters | grep -q "kind" && echo "kind installed already" || /opt/homebrew/bin/kind create cluster'
             }    
         }
