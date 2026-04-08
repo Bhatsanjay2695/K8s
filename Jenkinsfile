@@ -15,9 +15,9 @@ pipeline
         {
             steps
             {
-echo $PATH
-which docker
-docker version
+        sh 'echo $PATH'
+        sh 'which docker'
+        sh 'docker version'
 
             echo 'checking the prereqss'
             sh ' /opt/homebrew/bin/docker version | grep -q "Server" && echo "docker installed" || open -a Docker'
