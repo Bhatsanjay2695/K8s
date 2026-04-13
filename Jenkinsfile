@@ -9,7 +9,7 @@ pipeline
         stage('checkout')
         {
             steps
-            {
+            {   
             echo 'came to SCM'
             checkout scm
             }

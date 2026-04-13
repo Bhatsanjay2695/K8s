@@ -4,6 +4,7 @@ metadata:
   name: mypod
   labels:
     app: front-end
+    name: Snjsdn
 spec:
   containers:
     - name: nginx
